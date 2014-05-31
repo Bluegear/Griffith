@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
+ * Griffith
  * Created by Bluegear on 5/31/14.
  */
 @Entity(name = "USER")

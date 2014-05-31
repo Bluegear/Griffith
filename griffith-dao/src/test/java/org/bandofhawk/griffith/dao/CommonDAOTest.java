@@ -30,7 +30,7 @@ public class CommonDAOTest {
         User user = new User();
         user.setEmail("somename");
         dao.save(user);
-        User user2 = dao.em.find(User.class, Long.valueOf(1));
+        User user2 = dao.em.find(User.class, (long) 1);
         assertEquals(user2.getEmail(), "somename");
     }
 

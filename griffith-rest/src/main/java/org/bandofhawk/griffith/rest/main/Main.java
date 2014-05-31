@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
+ * Griffith
  * Created by Bluegear on 5/29/14.
  */
 public class Main {
@@ -39,7 +40,7 @@ public class Main {
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
         System.in.read();
-        server.stop();
+        server.shutdown();
     }
 
     public int square(int a){

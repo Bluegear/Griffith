@@ -34,7 +34,7 @@ public class MyModelResourceTest {
 
     @After
     public void tearDown() throws Exception {
-        server.stop();
+        server.shutdown();
     }
 
     /**

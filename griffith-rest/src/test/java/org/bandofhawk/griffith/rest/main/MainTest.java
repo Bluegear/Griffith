@@ -1,13 +1,15 @@
 package org.bandofhawk.griffith.rest.main;
 
-import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 /**
+ * Griffith
  * Created by Bluegear on 5/29/14.
  */
-public class MainTest extends TestCase {
+public class MainTest {
 
     Main main;
 
