@@ -1,4 +1,4 @@
-package org.bandofhawk.main;
+package org.bandofhawk.griffith.rest.main;
 
 import junit.framework.TestCase;
 import org.junit.Before;

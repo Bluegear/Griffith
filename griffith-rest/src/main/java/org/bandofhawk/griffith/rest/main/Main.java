@@ -1,4 +1,4 @@
-package org.bandofhawk.main;
+package org.bandofhawk.griffith.rest.main;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -22,7 +22,7 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.example package
-        final ResourceConfig rc = new ResourceConfig().packages("org.bandofhawk.main");
+        final ResourceConfig rc = new ResourceConfig().packages("org.bandofhawk.griffith.rest.main");
 
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
@@ -32,7 +32,7 @@ public class Main {
     /**
      * Main method.
      * @param args
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         final HttpServer server = startServer();

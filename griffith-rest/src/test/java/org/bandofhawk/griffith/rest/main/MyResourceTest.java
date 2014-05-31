@@ -1,18 +1,18 @@
-package org.bandofhawk.main;
+package org.bandofhawk.griffith.rest.main;
+
+import junit.framework.TestCase;
+import org.glassfish.grizzly.http.server.HttpServer;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-import junit.framework.TestCase;
-import org.glassfish.grizzly.http.server.HttpServer;
+import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
-public class MyResourceTest extends TestCase {
+public class MyResourceTest {
 
     private HttpServer server;
     private WebTarget target;
