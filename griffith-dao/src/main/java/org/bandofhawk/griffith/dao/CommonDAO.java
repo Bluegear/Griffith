@@ -13,9 +13,19 @@ public class CommonDAO {
     EntityManagerFactory emf;
 
     @PersistenceContext
-    EntityManager em;
+    private EntityManager em;
 
-    public CommonDAO() {
+    private static CommonDAO instance = new CommonDAO();
+
+    public EntityManager getEntityManager(){
+        return em;
+    }
+
+    public static CommonDAO getInstance(){
+        return instance;
+    }
+
+    private CommonDAO() {
         if (em == null) {
             emf = Persistence.createEntityManagerFactory("default");
             em = emf.createEntityManager();
