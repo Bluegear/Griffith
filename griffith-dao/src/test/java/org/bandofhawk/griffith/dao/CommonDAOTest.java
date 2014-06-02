@@ -16,13 +16,13 @@ public class CommonDAOTest {
 
     @Before
     public void setUp() throws Exception {
-        dao = new CommonDAO();
-        dao.em.getTransaction().begin();
+        dao = CommonDAO.getInstance();
+        dao.getEntityManager().getTransaction().begin();
     }
 
     @After
     public void tearDown() throws Exception {
-        dao.em.getTransaction().rollback();
+        dao.getEntityManager().getTransaction().rollback();
     }
 
     @Test
@@ -30,7 +30,7 @@ public class CommonDAOTest {
         User user = new User();
         user.setEmail("somename");
         dao.save(user);
-        User user2 = dao.em.find(User.class, (long) 1);
+        User user2 = dao.getEntityManager().find(User.class, (long) 1);
         assertEquals(user2.getEmail(), "somename");
     }
 
@@ -39,14 +39,14 @@ public class CommonDAOTest {
         User user = new User();
         user.setEmail("aaa");
         dao.save(user);
-        dao.em.flush();
+        dao.getEntityManager().flush();
 
         User user2 = new User();
         user2.setEmail("aaa");
 
         try {
             dao.save(user2);
-            dao.em.flush();
+            dao.getEntityManager().flush();
         } catch (Exception e) {
             assertTrue(e.getCause().getCause() instanceof SQLIntegrityConstraintViolationException);
             return;
